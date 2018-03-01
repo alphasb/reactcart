@@ -8,12 +8,12 @@ import {
 import PropTypes from 'prop-types';
 import Header from "../Header/Header";
 
-const HomePage = (props) => {
+const HomePage = ({history, location}) => {
   const navigate = (e) => {
-    props.history.push(e.target.dataset.value);
+    history.push(e.target.dataset.value);
   };
   return (<Container>
-    <Header {...props}/>
+    <Header {...{history, location}}/>
     <Segment raised>
       <List divided selection onClick={navigate}> 
       <List.Item value="/products" > 
@@ -39,6 +39,8 @@ const HomePage = (props) => {
 HomePage.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired
+  }).isRequired,
+  location: PropTypes.shape({
   }).isRequired
 }
 export default HomePage;

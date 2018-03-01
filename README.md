@@ -6,6 +6,7 @@ This projects features:
 * Event Bubbling with React
 * Decoupled Components
 * Image rendering demo
+* React Router demo
 
 ## Available Scripts
 
