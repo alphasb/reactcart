@@ -21,19 +21,18 @@ class App extends PureComponent {
     render(){
         return (
             <Container> 
-            <Header />
-            <Switch>
-                <Route path="/" exact component = {HomePage} /> 
-                <Route path="/products" exact component = {ProductCards}  /> 
-                <Route path="/cart" exact component = {CartPage}  /> 
-                <Route component = {Page404} /> 
-            </Switch>
+                <Header />
+                <Switch>
+                    <Route path="/" exact component = {HomePage} /> 
+                    <Route path="/products" exact component = {ProductCards}  /> 
+                    <Route path="/cart" exact component = {CartPage}  /> 
+                    <Route component = {Page404} /> 
+                </Switch>
             </ Container>
         );
     }
 }
 App.propTypes = {
     loadProductsActions : PropTypes.func.isRequired
-
 }
 export default connect(null, {loadProductsActions})(App);
