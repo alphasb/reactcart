@@ -9,19 +9,13 @@ import { addToCart, removeFromCart } from "../../Cart/CartActions";
 import MidField from "./MidField";
 
 const ProductCardFooter = (props) => {
+  const {product} = props;
 
-  const deleteFromCart = () => {
-    props.removeFromCart(props.product)
-  }
-  const putIntoCart = () => {
-    props.addToCart(props.product)
-  }
-    
   return <Card.Content extra textAlign='center'>
       <div>
-        <LeftLabel deleteFromCart={deleteFromCart}  />
-        <MidField productId={props.product.id} key={props.product.id}/>
-        <RightLabel putIntoCart={putIntoCart} />
+        <LeftLabel id={product.id}  />
+        <MidField productId={product.id} key={product.id}/>
+        <RightLabel id={product.id} />
       </div>
       <div>&nbsp;</div>
     </Card.Content>;
@@ -30,24 +24,20 @@ const ProductCardFooter = (props) => {
 ProductCardFooter.propTypes = {
   product: PropTypes.shape({
     id: PropTypes.number.isRequired
-  }).isRequired,
-  addToCart: PropTypes.func.isRequired,
-  removeFromCart: PropTypes.func.isRequired
+  }).isRequired
 } 
 
-export  const LeftLabel = ({deleteFromCart}) => <Label size='big' as='a' circular
-        onClick={deleteFromCart}> - </Label>;
+export  const LeftLabel = ({id}) => <Label size='big' as='a' circular data-value={id} data-action="remove"> - </Label>;
 
 LeftLabel.propTypes = {
-  deleteFromCart: PropTypes.func.isRequired
+  id: PropTypes.number.isRequired
 } 
 
-export  const RightLabel = ({putIntoCart}) => <Label size='big' as='a' circular
-        onClick={putIntoCart}> + </Label>;
+export  const RightLabel = ({id}) => <Label size='big' as='a' circular data-value={id} data-action="add"> + </Label>;
     
 
 RightLabel.propTypes = {
-    putIntoCart: PropTypes.func.isRequired
+    id: PropTypes.number.isRequired
 }   
 
 

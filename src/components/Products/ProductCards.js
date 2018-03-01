@@ -8,16 +8,18 @@ import ProductCartSummary from "./ProductCartSummary";
 import ProductFilter from "./ProductFilter";
 import ProductList from "./ProductList";
 
-const ProductCards = (props) => 
+const ProductCards = ({history,location}) => 
         <Container >
-            <Header {...props} />
+            <Header {...{history,location}} />
             <ProductFilter />
-            <ProductCartSummary  history={props.history} />
+            <ProductCartSummary  history={history} />
             <ProductList />
         </Container>;
     
 ProductCards.propTypes = {
     history: PropTypes.shape({
+    }).isRequired,
+    location: PropTypes.shape({
     }).isRequired
 }
 

@@ -28,7 +28,6 @@ export default (state = {lst:[]}, action) => {
             return cart;
           }
         case EMPTY_CART: {
-            console.log('&&&')
             return {lst:[]};
           }  
         default:
