@@ -6,6 +6,7 @@ import {
 } from "semantic-ui-react";
 import PropTypes from 'prop-types';
 import { connect } from "react-redux";
+import { withRouter } from 'react-router';
 import ProductCartTotal  from "./ProductCartTotal";
 import { emptyCart } from "../Cart/CartActions";
 
@@ -35,4 +36,4 @@ ProductCartSummary.propTypes = {
     emptyCart: PropTypes.func.isRequired
   }
 
-export default connect( null, {emptyCart})(ProductCartSummary);
+export default withRouter(connect( null, {emptyCart})(ProductCartSummary));

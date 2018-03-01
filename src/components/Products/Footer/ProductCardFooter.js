@@ -27,13 +27,15 @@ ProductCardFooter.propTypes = {
   }).isRequired
 } 
 
-export  const LeftLabel = ({id}) => <Label size='big' as='a' circular data-value={id} data-action="remove"> - </Label>;
+export  const LeftLabel = ({id}) => 
+  <Label size='big' as='a' circular data-value={id} data-action="remove"> - </Label>;
 
 LeftLabel.propTypes = {
   id: PropTypes.number.isRequired
 } 
 
-export  const RightLabel = ({id}) => <Label size='big' as='a' circular data-value={id} data-action="add"> + </Label>;
+export  const RightLabel = ({id}) => 
+  <Label size='big' as='a' circular data-value={id} data-action="add"> + </Label>;
     
 
 RightLabel.propTypes = {

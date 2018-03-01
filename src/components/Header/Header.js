@@ -1,6 +1,7 @@
 import React  from "react";
 import { Menu } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router'
 
 const  Header = ({history,location}) => { 
 
@@ -41,4 +42,4 @@ Header.propTypes = {
         push:PropTypes.func.isRequired
     }).isRequired
   } 
-export default Header;  
+export default withRouter(Header);  
