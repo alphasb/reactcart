@@ -12,31 +12,24 @@ import CartPage from "./components/Cart/CartPage";
 import {loadProductsActions} from "./components/Products/ProductActions";
 import Header from "./components/Header/Header";
 
-
-
 class App extends PureComponent { 
 
     componentDidMount(){
-        this.loadProducts();
-    }
-
-    loadProducts = () => {
         this.props.loadProductsActions();
     }
 
     render(){
-        
-    return (<Container> 
-        <Header />
-        <Switch>
-            <Route path="/" exact component = {HomePage} /> 
-            <Route path="/products" exact component = {ProductCards}  /> 
-            <Route path="/cart" exact component = {CartPage}  /> 
-            <Route component = {Page404} /> 
-        </Switch>
-
-    </ Container>
-    );
+        return (
+            <Container> 
+            <Header />
+            <Switch>
+                <Route path="/" exact component = {HomePage} /> 
+                <Route path="/products" exact component = {ProductCards}  /> 
+                <Route path="/cart" exact component = {CartPage}  /> 
+                <Route component = {Page404} /> 
+            </Switch>
+            </ Container>
+        );
     }
 }
 App.propTypes = {
