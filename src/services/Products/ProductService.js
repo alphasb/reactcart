@@ -13,12 +13,9 @@ const ProductService =  {
     },
 
     sumCartQty: (cart) => {
-      if(!cart || !cart.lst || cart.lst.length<1) {
-        return 0;
-      }
-      const result = Object.keys(cart.lst).reduce((acc,el) => {return acc+cart.lst[el] }, 0);
-      return result;
+      return Object.keys(cart.lst).reduce((acc,el) => {return acc+cart.lst[el] }, 0);
     },
+    
     loadProductKeywords: () => {
       return [
         {full:"french", short:'fr'},
