@@ -7,6 +7,8 @@ This projects features:
 * Decoupled Components
 * Image rendering demo
 * React Router demo
+* Async/Await and Promises
+* Functional Programming (filter/map/reduce)
 
 ## Available Scripts
 

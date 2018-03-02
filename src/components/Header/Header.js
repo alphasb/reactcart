@@ -1,7 +1,8 @@
 import React  from "react";
 import { Menu } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router'
+import { withRouter } from 'react-router';
+import HeaderItem from "./HeaderItem";
 
 const  Header = ({history,location}) => { 
 
@@ -16,19 +17,11 @@ const  Header = ({history,location}) => {
     return(
         <Menu onClick = {navigate}>
             <Menu.Menu>
-            <Menu.Item 
-                active={location.pathname === '/'}  
-                data-value="/">
-                Home
-            </Menu.Item>
+                <HeaderItem active={location.pathname === '/'} data={"/"}  name="Home" />
             </Menu.Menu>
             <Menu.Menu position="right">
-            <Menu.Item active={location.pathname === '/products'}  data-value="/products">
-                Products
-            </Menu.Item>
-            <Menu.Item active={location.pathname === '/cart'}   data-value="/cart">
-                Cart
-            </Menu.Item>
+                <HeaderItem active={location.pathname === '/products'} data={"/products"}  name="Products" />
+                <HeaderItem active={location.pathname === '/cart'} data={"/cart"}  name="Cart" />
             </Menu.Menu>
         </Menu>
     );

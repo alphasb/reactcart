@@ -3,7 +3,7 @@ import {
     Container,
     List,
     Label,
-    Segment
+    Segment 
   } from "semantic-ui-react";
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router'
@@ -42,6 +42,18 @@ const HomePage = ({history}) => {
       <List.Item value="/products" > 
         <Label color='red' horizontal data-value="/products">Decoupling</Label>
         Component decoupling
+      </List.Item>
+      <List.Item  value='/products'>
+        <Label color='purple' horizontal data-value="/products">Async</Label>
+        Async/await promises
+      </List.Item>
+      <List.Item  value='/products'>
+        <Label color='green' horizontal data-value="/products">Functional</Label>
+        Functional snippets ( filter/map/reduce )
+      </List.Item>
+      <List.Item  value='/products'>
+        <Label color='teal' horizontal data-value="/products">Rendering</Label>
+        Optimized Rendering
       </List.Item>
     </List>
   </Segment>

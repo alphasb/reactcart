@@ -3,13 +3,13 @@ import ProductApi from "../../services/Products/ProductApi";
 export const LOAD_PRODUCTS = 'LOAD_PRODUCTS';
 export const FILTER_PRODUCTS = 'FILTER_PRODUCTS';
 
-export const loadProductsActions = () => async dispatch => {
+export const loadProductsActions =  async (store) =>  {
   const products = await ProductApi.loadProductList();
-  dispatch({
+  store.dispatch({
     type: LOAD_PRODUCTS,
     products
   });
-  dispatch({
+  store.dispatch({
     type: FILTER_PRODUCTS,
     filtered: products
 });

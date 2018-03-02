@@ -1,21 +1,15 @@
 const ProductService =  {
 
     listProductsInCart: (cart, products) => {
-      const results = [];
-      if(!cart|| !cart.lst) {return results;}
-      Object.keys(cart.lst).forEach(el => {
-        const index = products.findIndex(elem => elem.id === parseInt(el, 10));
-        if(index >- 1 && cart.lst[el]){
-          results.push({ 
-            id: products[index].id,
-            name: products[index].name, 
-            img: products[index].img, 
-            descr: `${products[index].descr[0]} ...`,
-            qty: cart.lst[el]
-          });
-        }
-      });
-      return results;
+     const results = Object.keys(cart.lst).reduce( (acc, el) => {
+       const res = products
+       .filter(elem => (cart.lst[el] &&  elem.id === parseInt(el, 10)))
+       .map(({id, name, img, descr}) => {
+         return { id, name, img, descr: `${descr[0]} ...`, qty: cart.lst[el] } 
+       });
+       return [...acc, ...res];
+    },[]);
+    return results;
     },
 
     sumCartQty: (cart) => {
