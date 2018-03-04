@@ -4,9 +4,7 @@ import {
     Label
   } from "semantic-ui-react";
 import PropTypes from 'prop-types';
-import { connect } from "react-redux";
-import { addToCart, removeFromCart } from "../../Cart/CartActions";
-import MidField from "./MidField";
+import ProductQty from "./ProductQty"; 
 
 const ProductCardFooter = (props) => {
   const {product} = props;
@@ -14,7 +12,7 @@ const ProductCardFooter = (props) => {
   return <Card.Content extra textAlign='center'>
       <div>
         <LeftLabel id={product.id}  />
-        <MidField productId={product.id} key={product.id}/>
+        <ProductQty productId={product.id} key={product.id}/>
         <RightLabel id={product.id} />
       </div>
       <div>&nbsp;</div>
@@ -43,4 +41,4 @@ RightLabel.propTypes = {
 }   
 
 
-export  default connect(null, {addToCart, removeFromCart})(ProductCardFooter);  
+export  default ProductCardFooter;  

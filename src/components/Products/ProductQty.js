@@ -5,12 +5,12 @@ import {
   } from "semantic-ui-react";
 import { connect } from "react-redux";
 
-const MidField = ({qty}) =>  <Label size='big' color="red" basic>{qty}</Label>;
+const ProductQty = ({qty}) =>  <Label size='big' color="red" basic>{qty}</Label>;
 
-MidField.propTypes = {
+ProductQty.propTypes = {
   qty: PropTypes.number
 } 
-MidField.defaultProps = {
+ProductQty.defaultProps = {
     qty: 0
 } 
 
@@ -19,4 +19,4 @@ export  default connect(
     return {
       qty: state.cart.lst[props.productId]
     }
-  })(MidField);  
+  })(ProductQty);  

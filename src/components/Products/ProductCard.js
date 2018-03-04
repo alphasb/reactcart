@@ -5,7 +5,7 @@ import {
   } from "semantic-ui-react";
 import PropTypes from 'prop-types';
 import LoadImage from "../Common/LoadImage";
-import ProductCardFooter from "./Footer/ProductCardFooter";
+import ProductCardFooter from "./ProductCardFooter";
 
 
 

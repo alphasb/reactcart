@@ -37,4 +37,4 @@ CartItems.defaultProps = {
 }
 export default connect( (state) => {
     return { productList: ProductService.listProductsInCart(state.cart, state.products)}
-    }, null)(CartItems);
+    })(CartItems);
