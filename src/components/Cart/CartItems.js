@@ -6,16 +6,17 @@ import {
 import PropTypes from "prop-types";
 import {connect} from 'react-redux';
 import ProductService from "../../services/Products/ProductService";
+import LoadImage from "../Common/LoadImage";
 
-const images =require.context( "../../resource/img",true);
 
-const CartItems = ({productList}) => 
+const CartItems = ({productList}) => {
+        return (
         <Item.Group >
         <Divider horizontal>Items in your shopping cart</Divider>
         <div>&nbsp;</div>
         {(productList.length<1) ? <div>Your cart is empty</div> : productList.map(el => 
             <Item key={el.id}>
-                <Item.Image size='tiny' src={images(`${el.img}`)} as='a' shape='rounded'
+                <Item.Image size='tiny' src={LoadImage(`${el.img}`)} as='a' shape='rounded'
                     />
                 <Item.Content>
                     <Item.Header as='a'
@@ -25,8 +26,9 @@ const CartItems = ({productList}) =>
                 </Item.Content>
             </Item>
         )}
-        </Item.Group>        
-
+        </Item.Group>
+        );       
+}
 CartItems.propTypes = {
     productList: PropTypes.array
 }

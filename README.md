@@ -9,6 +9,7 @@ This projects features:
 * React Router demo
 * Async/Await and Promises
 * Functional Programming (filter/map/reduce)
+* Unit Tests
 
 ## Available Scripts
 

@@ -17,5 +17,5 @@ export  default connect(
       return {
         total: ProductService.sumCartQty(state.cart)
       }
-    })(ProductCartTotal);  
+    } )(ProductCartTotal);  
   

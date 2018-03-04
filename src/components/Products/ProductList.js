@@ -11,7 +11,7 @@ const ProductList = (props) => {
     const {products}=props;
     const handleAction = (e) => {
         const {value, action} = e.target.dataset;
-        const index=products.findIndex(el=>el.id===parseInt(value,10));
+        const index=products.findIndex(el => el.id===parseInt(value,10));
         if(index === -1) {return;}
         if(action === 'remove') {
             props.removeFromCart(products[index]);
@@ -29,9 +29,11 @@ const ProductList = (props) => {
 }
     
 ProductList.propTypes = {
-    products: PropTypes.arrayOf(PropTypes.object).isRequired
+    products: PropTypes.arrayOf(PropTypes.object).isRequired,
+    removeFromCart: PropTypes.func.isRequired,
+    addToCart: PropTypes.func.isRequired
 }
 
-export default connect( state => {return {
-    products: state.filteredProducts}}, {addToCart, removeFromCart} )(ProductList);
+export default connect( state => { return {
+    products: state.filteredProducts} }, {addToCart, removeFromCart} )(ProductList);
  

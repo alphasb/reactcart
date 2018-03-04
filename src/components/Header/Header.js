@@ -17,11 +17,11 @@ const  Header = ({history,location}) => {
     return(
         <Menu onClick = {navigate}>
             <Menu.Menu>
-                <HeaderItem active={location.pathname === '/'} data={"/"}  name="Home" />
+                <HeaderItem data={"/"}  name="Home" />
             </Menu.Menu>
             <Menu.Menu position="right">
-                <HeaderItem active={location.pathname === '/products'} data={"/products"}  name="Products" />
-                <HeaderItem active={location.pathname === '/cart'} data={"/cart"}  name="Cart" />
+                <HeaderItem data={"/products"}  name="Products" />
+                <HeaderItem data={"/cart"}  name="Cart" />
             </Menu.Menu>
         </Menu>
     );
