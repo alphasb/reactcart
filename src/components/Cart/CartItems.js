@@ -6,29 +6,19 @@ import {
 import PropTypes from "prop-types";
 import {connect} from 'react-redux';
 import ProductService from "../../services/Products/ProductService";
-import LoadImage from "../Common/LoadImage";
+import CartItem from "./CartItem";
 
-
-const CartItems = ({productList}) => {
-        return (
+const CartItems = ({productList}) => 
         <Item.Group >
-        <Divider horizontal>Items in your shopping cart</Divider>
-        <div>&nbsp;</div>
-        {(productList.length<1) ? <div>Your cart is empty</div> : productList.map(el => 
-            <Item key={el.id}>
-                <Item.Image size='tiny' src={LoadImage(`${el.img}`)} as='a' shape='rounded'
-                    />
-                <Item.Content>
-                    <Item.Header as='a'
-                    >{el.name}</Item.Header>
-                    <Item.Description> Qty: {el.qty}</Item.Description>
-                    <Item.Extra> {el.descr}</Item.Extra>
-                </Item.Content>
-            </Item>
-        )}
-        </Item.Group>
-        );       
-}
+            <Divider horizontal>Items in your shopping cart</Divider>
+            <div>&nbsp;</div>
+            {(productList.length<1) ? 
+                <div>Your cart is empty</div> : 
+                productList.map(el => 
+                <CartItem key={el.id} item={el} />) 
+            }
+        </Item.Group>;       
+
 CartItems.propTypes = {
     productList: PropTypes.array
 }
