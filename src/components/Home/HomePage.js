@@ -55,6 +55,14 @@ const HomePage = ({history}) => {
         <Label color='teal' horizontal data-value="/products">Rendering</Label>
         Optimized Rendering
       </List.Item>
+      <List.Item  value='/products'>
+        <Label color='purple' horizontal data-value="/products">Search</Label>
+        Search Products Example
+      </List.Item>
+      <List.Item value="/products" > 
+        <Label color='red' horizontal data-value="/products">Observables / RxJs</Label>
+        Search using Observables (debounce)
+      </List.Item>
     </List>
   </Segment>
   </Container>);

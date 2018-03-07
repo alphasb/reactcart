@@ -28,6 +28,16 @@ const ProductService =  {
         {full:"wine"},
         {full:"all"}        
       ];
+    },
+
+    searchProducts: (products, term) => {
+      const lowerTerm = term.toLowerCase();
+      return products.filter(el => {
+        return el.keys.indexOf(lowerTerm) !==-1||
+                el.name.indexOf(lowerTerm) !==-1||
+                el.name.toLowerCase().indexOf(lowerTerm) !==-1||
+                el.descr.indexOf(lowerTerm)!==-1;
+      }).map(el => {return {value:el.id, key:el.id, text: el.name}});
     }
 }
 export default ProductService; 
