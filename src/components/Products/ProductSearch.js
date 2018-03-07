@@ -41,10 +41,10 @@ class ProductSearch extends PureComponent {
 };
 
 ProductSearch.propTypes= {
-    searchResult: PropTypes.shape([]).isRequired,
+    searchResult: PropTypes.array.isRequired, 
     searchProduct: PropTypes.func.isRequired,
     selectProduct: PropTypes.func.isRequired,
-    products: PropTypes.shape([]).isRequired
+    products: PropTypes.array.isRequired
 }
 export default connect(state => {return {
     products: state.products,

@@ -29,7 +29,7 @@ const ProductFilter = (props) => {
 }
 ProductFilter.propTypes = {
     filterProducts: PropTypes.func.isRequired,
-    products: PropTypes.shape([])
+    products: PropTypes.array
 }
 ProductFilter.defaultProps = {
     products:[]
