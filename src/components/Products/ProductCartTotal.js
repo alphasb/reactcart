@@ -6,7 +6,7 @@ import {
 import { connect } from "react-redux";
 import ProductService from "../../services/Products/ProductService";
 
-const ProductCartTotal = ({total}) => <span><Icon key="5" name="cart" /> {total} </span>;
+const ProductCartTotal = ({total}) => <span><Icon  name="cart" /> {total} </span>;
    
 ProductCartTotal.propTypes = {
     total: PropTypes.number.isRequired

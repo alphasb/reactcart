@@ -5,7 +5,7 @@ import {
   } from "semantic-ui-react";
 import { connect } from "react-redux";
 
-const ProductQty = ({qty}) =>  <Label size='big' color="red" basic>{qty}</Label>;
+const ProductQty = ({qty}) =>  <Label size='big' color="red" basic={!qty}> {qty} </Label>;
 
 ProductQty.propTypes = {
   qty: PropTypes.number
