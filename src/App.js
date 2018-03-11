@@ -8,16 +8,20 @@ import Page404 from "./components/Common/Page404";
 import ProductCards from "./components/Products/ProductCards";
 import CartPage from "./components/Cart/CartPage";
 import Header from "./components/Header/Header";
+import ErrorBoundary from "./components/Common/ErrorBoundary";
 
 const App = () => 
+    
     <Container> 
         <Header />
-        <Switch>
-            <Route path="/" exact component = {HomePage} /> 
-            <Route path="/products" exact component = {ProductCards}  /> 
-            <Route path="/cart" exact component = {CartPage}  /> 
-            <Route component = {Page404} /> 
-        </Switch>
+        <ErrorBoundary>
+            <Switch>
+                <Route path="/" exact component = {HomePage} /> 
+                <Route path="/products" exact component = {ProductCards}  /> 
+                <Route path="/cart" exact component = {CartPage}  /> 
+                <Route component = {Page404} /> 
+            </Switch>
+        </ErrorBoundary>
     </ Container>;
 
 export default App;

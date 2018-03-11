@@ -5,7 +5,7 @@ const ProductService =  {
         const res = products
         .filter(elem => (cart.lst[el] &&  elem.id === parseInt(el, 10)))
         .map(({id, name, img, descr}) => {
-          return { id, name, img, descr: `${descr[0]} ...`, qty: cart.lst[el] } 
+          return { id, name, img, descr: `${descr[0].substring(0,80)} ...`, qty: cart.lst[el] } 
         });
         return [...acc, ...res];
       },[]);
