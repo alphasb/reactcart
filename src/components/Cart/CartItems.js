@@ -8,7 +8,6 @@ const CartItems = ({productList}) => {
     if(productList.length < 1) {
         return (<div>Your cart is empty</div>);
     }
-
     return productList.map(item => 
             <CartItem key={item.id}  {...item} />
         );          

@@ -6,13 +6,15 @@ import ProductSearchreducer from "../Products/ProductSearchreducer";
 import FilteredProductsReducer from "../Products/FilteredProductsReducer"; 
 import CartReducer from "../Cart/CartReducer"; 
 import { loadProductsActions } from "../Products/ProductActions";
+import CommonReducer from "../Common/CommonReducer";
 
 
 const rootReducer = combineReducers({
     products: ProductsReducer,
     cart: CartReducer,
     filteredProducts: FilteredProductsReducer,
-    search: ProductSearchreducer
+    search: ProductSearchreducer,
+    common: CommonReducer
 
 });
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));

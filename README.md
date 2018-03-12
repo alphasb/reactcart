@@ -11,6 +11,7 @@ This projects features:
 * Functional Programming (filter/map/reduce)
 * Search Products Example
 * RxJs / Observables (debounce)
+* Error Boundary
 * Unit Tests
 
 ## Available Scripts

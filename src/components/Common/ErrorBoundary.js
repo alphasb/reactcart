@@ -1,31 +1,26 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import {connect} from 'react-redux';
+import { addError } from "./CommonActions";
 
 class ErrorBoundary extends Component {
     
-    constructor(props) {
-      super(props);
-      //todo - move state to redux store
-      this.state = { error: null, errorInfo: null };
-    }
-  
     componentDidCatch(error, info) {
-        this.setState({
+        this.props.addError({
             error,
             errorInfo: info
           })
     }
   
     render() {
-      if (this.state.errorInfo) {
-        // You can render any custom fallback UI
+      if (this.props.error.errorInfo) {
         return (
             <div>
                 <h2>Something went wrong.</h2>
                 <details style={{ whiteSpace: 'pre-wrap' }}>
-                    {this.state.error && this.state.error.toString()}
+                    {this.props.error && this.props.error.toString()}
                     <br />
-                    {this.state.errorInfo.componentStack}
+                    {this.props.error.errorInfo.componentStack}
                 </details>
             </div>
         );
@@ -34,6 +29,12 @@ class ErrorBoundary extends Component {
     }
   }
 ErrorBoundary.propTypes={
-    children: PropTypes.shape({}).isRequired
+    children: PropTypes.shape({}).isRequired,
+    error: PropTypes.shape({errorInfo:PropTypes.string}).isRequired,
+    addError: PropTypes.func.isRequired,
+
 }  
-export default ErrorBoundary;
+
+export default connect( (state) => {
+    return { error: state.common.error}
+    }, {addError})(ErrorBoundary);
